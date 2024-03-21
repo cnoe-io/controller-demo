@@ -2,4 +2,4 @@ resources:
 - ../../default
 images:
 - name: controller
-  newName: ko://cnoe-io/controller-demo
+  newName: ko://github.com/cnoe-io/controller-demo

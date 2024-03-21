@@ -66,8 +66,7 @@ spec:
         # seccompProfile:
         #   type: RuntimeDefault
       containers:
-      - command:
-        - /ko-app/cmd
+      - command: []
         args:
         - --leader-elect
         image: controller

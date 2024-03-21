@@ -66,8 +66,7 @@ spec:
         # seccompProfile:
         #   type: RuntimeDefault
       containers:
-      - command:
-        - /manager
+      - command: []
         args:
         - --leader-elect
         image: controller

@@ -1,0 +1,12 @@
+apiVersion: apps.demo.cnoe.io/v1
+kind: MyDeployment
+metadata:
+  labels:
+    app.kubernetes.io/name: mydeployment
+    app.kubernetes.io/instance: mydeployment-sample
+    app.kubernetes.io/part-of: controller-demo
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: controller-demo
+  name: mydeployment-sample
+spec:
+  # TODO(user): Add fields here

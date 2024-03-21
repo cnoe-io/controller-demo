@@ -1,0 +1,27 @@
+# permissions for end users to view mydeployments.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: mydeployment-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: controller-demo
+    app.kubernetes.io/part-of: controller-demo
+    app.kubernetes.io/managed-by: kustomize
+  name: mydeployment-viewer-role
+rules:
+- apiGroups:
+  - apps.demo.cnoe.io
+  resources:
+  - mydeployments
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.demo.cnoe.io
+  resources:
+  - mydeployments/status
+  verbs:
+  - get

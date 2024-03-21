@@ -21,7 +21,6 @@ limitations under the License.
 package v1
 
 import (
-	corev1 "k8s.io/api/core/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -91,13 +90,6 @@ func (in *MyDeploymentSpec) DeepCopyInto(out *MyDeploymentSpec) {
 		in, out := &in.Replicas, &out.Replicas
 		*out = new(int32)
 		**out = **in
-	}
-	if in.Containers != nil {
-		in, out := &in.Containers, &out.Containers
-		*out = make([]corev1.Container, len(*in))
-		for i := range *in {
-			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
 	}
 }
 

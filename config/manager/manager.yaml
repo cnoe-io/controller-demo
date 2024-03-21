@@ -67,7 +67,7 @@ spec:
         #   type: RuntimeDefault
       containers:
       - command:
-        - /manager
+        - /ko-app/cmd
         args:
         - --leader-elect
         image: controller

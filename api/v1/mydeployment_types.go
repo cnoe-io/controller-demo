@@ -17,7 +17,6 @@ limitations under the License.
 package v1
 
 import (
-	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -30,13 +29,8 @@ type MyDeploymentSpec struct {
 	// +optional
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,1,opt,name=replicas"`
 
-	// List of containers belonging to the pod.
-	// Containers cannot currently be added or removed.
-	// There must be at least one container in a Pod.
-	// Cannot be updated.
-	// +patchMergeKey=name
-	// +patchStrategy=merge
-	Containers []corev1.Container `json:"containers,omitempty"`
+	// Image to be used for container
+	Image string `json:"image"`
 }
 
 // MyDeploymentStatus defines the observed state of MyDeployment

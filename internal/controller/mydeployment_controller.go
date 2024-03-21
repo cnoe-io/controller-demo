@@ -49,7 +49,12 @@ func setDeployment(myDeployment *v1.MyDeployment, deployment *appsv1.Deployment)
 			},
 		},
 		Spec: corev1.PodSpec{
-			Containers: myDeployment.Spec.Containers,
+			Containers: []corev1.Container{
+				{
+					Name:  "main",
+					Image: myDeployment.Spec.Image,
+				},
+			},
 		},
 	}
 }
